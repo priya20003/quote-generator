@@ -3,16 +3,9 @@
 var data;
 let front = true;
 
-// Getting the front and the back author boxes
 const authors = document.querySelectorAll(".author");
-
-// Getting the front and the back texts
 const texts = document.querySelectorAll(".text");
-
-// Getting the body
 const body = document.getElementById("body");
-
-// Getting the buttons
 const button = document.querySelectorAll(".new-quote");
 
 const blockFront = document.querySelector(".block__front");
@@ -31,8 +24,7 @@ const buttonBack = button[1];
 // An arrow function used to get a quote randomly
 const displayQuote = () =>{
 
-    // Generates a random number between 0 
-    // and the length of the dataset
+
     let index = Math.floor(Math.random()*data.length);
 
     // Stores the quote present at the randomly generated index
@@ -46,7 +38,7 @@ const displayQuote = () =>{
         author = "Anonymous"
     }
 
-    // Replacing the current quote and the author with a new one
+
 
     if(front){
         // Changing the front if back-side is displayed
@@ -69,8 +61,6 @@ fetch("https://type.fit/api/quotes")
     }) // Getting the raw JSON data
     .then(function(data) {
 
-        // Storing the quotes internally upon 
-        // successful completion of request
         this.data = data; 
 
         // Displaying the quote When the Webpage loads
